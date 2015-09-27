@@ -14,7 +14,7 @@ vector<int> parseInts(string str) {
         parsed_ints.push_back(stoi(delim));
     }
     
-    return token_;
+    return parsed_ints;
 }
 
 int main() {
