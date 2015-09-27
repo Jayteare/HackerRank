@@ -1,2 +1,2 @@
-# Project_Euler
-C++ Solutions 
+# Hackerrank
+C++ / Java Solutions to Data Structures problems. 
