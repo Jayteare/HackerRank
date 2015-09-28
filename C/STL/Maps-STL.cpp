@@ -23,7 +23,7 @@ int main() {
                 m[S_i] += Q_i;
         }
         else if(N_i == 2)
-            m[S_i] = NULL;//Makes TestCase #17 run in 0.21seconds ; // m.erase(S_i) makes TestCase #17 run in 0.23seconds
+            m[S_i] = NULL;//Makes TestCase #17 run in 0.21seconds ; // m.erase(S_i) makes TestCase #17 run in 0.23seconds ; // m.[S_i] makes TestCase #17 run in 0.21seconds ;
         else if(N_i == 3)
             cout << m[S_i] << '\n';
             
