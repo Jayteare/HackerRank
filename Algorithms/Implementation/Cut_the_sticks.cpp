@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-//0.0seconds TestCase #9
+//0.0seconds in TestCase #9
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     int T,N,min_=0,count=0;
