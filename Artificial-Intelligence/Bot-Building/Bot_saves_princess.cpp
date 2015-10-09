@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+//Recieved full 13.90 points ranked as first seed.
 void displayPathtoPrincess(int n, vector <string> grid){
     //your logic here
     string grid_floor; int t = n;
@@ -13,13 +14,11 @@ void displayPathtoPrincess(int n, vector <string> grid){
     for(int i =0; i < grid.size();i++)
     {
         grid_floor = grid[i];
-        //cout << grid_floor << endl;
         for(int j = 0; j < t; j++)
         {
             std::size_t found = grid_floor.find("m");
             if (found!=std::string::npos)
             {
-                //cout << "found at position: i x y : " << i << " x " << found << endl;
                 bot_x = i;
                 bot_y = found;
                 break;
@@ -33,22 +32,17 @@ void displayPathtoPrincess(int n, vector <string> grid){
     for(int i =0; i < grid.size();i++)
     {
         grid_floor = grid[i];
-        //cout << grid_floor << endl;
         for(int j = 0; j < t; j++)
         {
             std::size_t found = grid_floor.find("p");
             if (found!=std::string::npos)
             {
-                //cout << "found at position: i x y : " << i << " x " << found << endl;
                 prnc_x = i;
                 prnc_y = found;
                 break;
             }       
         }
     }
-    
-    //cout << "Bot is at location: " << bot_x << " x " << bot_y << endl;
-    //cout << "Princess is at location: " << prnc_x << " x " << prnc_y << endl;
     
     bool check_x,check_y;
     int x_moves,y_moves;
