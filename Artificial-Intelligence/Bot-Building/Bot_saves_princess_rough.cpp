@@ -58,15 +58,43 @@ void displayPathtoPrincess(int n, vector <string> grid){
     
     check_x = x_moves > 0;
     if(check_x)
-        cout << "DOWN" << endl;    
+    {
+        while(x_moves>0)
+        {
+            cout << "DOWN" << endl; 
+            x_moves--;
+        }
+     
+    }
     else
-        cout << "UP" << endl;    
+    {
+        while(x_moves<0)    
+        {
+            cout << "UP" << endl;  
+            x_moves++;
+        }
+    }
+  
     
     check_y = y_moves > 0;
     if(check_y)
-        cout << "RIGHT" << endl;
+    {
+        while(y_moves>0)
+        {
+            cout << "RIGHT" << endl;
+            y_moves--;
+        }
+                
+    }
     else
-        cout << "LEFT" << endl;
+    {
+        while(y_moves<0)
+        {
+            cout << "LEFT" << endl;
+            y_moves++;    
+        }
+    }
+        
 }
 int main(void) {
 
