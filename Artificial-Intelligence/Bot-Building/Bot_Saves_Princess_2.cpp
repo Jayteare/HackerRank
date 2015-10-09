@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+//Recieved full 17.50 points ranked as first seed.
 void nextMove(int n, int r, int c, vector <string> grid){
 //your logic here
     string grid_floor; int t = n;
