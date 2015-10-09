@@ -7,7 +7,6 @@ void nextMove(int n, int r, int c, vector <string> grid){
     int bot_x = r,bot_y = c;
     int prnc_x,prnc_y;
     
-    
     //FIND THE PRINCESS NOW
     grid_floor = grid[0];
     for(int i =0; i < grid.size();i++)
@@ -50,15 +49,11 @@ void nextMove(int n, int r, int c, vector <string> grid){
         cout << "DOWN" << endl; 
         check_r = true;
     }
-    else if(check_x < 0)
+    else if(x_moves < 0)
     {
         cout << "UP" << endl;
         check_r = true;
     }
-  
-
-
-        
 }
 int main(void) {
 
