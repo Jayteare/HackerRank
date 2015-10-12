@@ -9,39 +9,27 @@ void displayPathtoPrincess(int n, vector <string> grid){
     int bot_x,bot_y;
     int prnc_x,prnc_y;
     
-    //FIND THE BOT
+    //FIND THE BOT AND THE PRINCESS
     grid_floor = grid[0];
     for(int i =0; i < grid.size();i++)
     {
         grid_floor = grid[i];
         for(int j = 0; j < t; j++)
         {
-            std::size_t found = grid_floor.find("m");
+            std::size_t found  = grid_floor.find("m");
+            std::size_t found_ = grid_floor.find("p");
             if (found!=std::string::npos)
             {
                 bot_x = i;
                 bot_y = found;
-                break;
-            }       
-        }
- 
-    }
-    
-    //FIND THE PRINCESS NOW
-    grid_floor = grid[0];
-    for(int i =0; i < grid.size();i++)
-    {
-        grid_floor = grid[i];
-        for(int j = 0; j < t; j++)
-        {
-            std::size_t found = grid_floor.find("p");
-            if (found!=std::string::npos)
+            }
+            else if (found_!=std::string::npos)
             {
                 prnc_x = i;
-                prnc_y = found;
-                break;
-            }       
+                prnc_y = found_;
+            }
         }
+ 
     }
     
     bool check_x,check_y;
