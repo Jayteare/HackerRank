@@ -21,6 +21,7 @@ int main() {
         }
     }
     
+    //OUTER LOOP SWITCH PART_1 - START
     for(int i = 0; i < M; i++)
     {
         if(i == 0)
@@ -40,8 +41,12 @@ int main() {
                 arr[i+1][0] = temp; 
                 temp = temp2;
                 
-//                cout << i + 1 << endl;
+                /* 
                 
+                OUTER SUBJECTIVE ROTATION - START
+                
+                */
+                //Bottom-Left-To-Right Rotation
                 if(i+1 == M - 1)
                 {
                     for(int j = 0; j < N; j++)
@@ -53,13 +58,29 @@ int main() {
                             temp = temp2;
                         }
                     }
-                }
+                }//Bottom-Left-To-Right Rotation - END
             }
-            
-
+        }
+    }//OUTER LOOP SWITCH PART_1 - END
+    
+    for(int i = 2; i >0; i--)
+    {
+        temp2 = arr[i][3];
+        arr[i][3] = temp;
+        temp = temp2;
+        
+        if(i - 1 == 0)
+        {
+            for(int j = 3; j > 0; j--)
+            {
+                temp2 = arr[0][j];
+                arr[0][j] = temp;
+                temp = temp2;
+            }
         }
     }
     
+    //PRINT
     for(int i = 0; i < M ; i++)
     {
         for(int j = 0; j < N; j++)
