@@ -1,41 +1,27 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 
+//0.0seconds in TestCase #11
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     
-    int T_input = 0;
-    int N_input = 0;
-    int K_input = 0;
-    int A_input = 0;
-    int counter = 0;
+    int T = 0, N = 0, K = 0, A = 0, counter = 0;
     
-    cin >> T_input;
-    for(int index = 0; index < T_input; index++)
+    cin >> T;
+    for(int i = 0; i < T; i++)
     {
-        cin >> N_input;
-        cin  >> K_input; 
-        for(int index_2 = 0; index_2 < N_input; index_2++)
+        cin  >> N >> K; 
+        for(int j = 0; j < N; j++)
         {
-            cin >> A_input;
-            if(A_input < 1)
-            {
+            cin >> A;
+            if(A < 1)
                 counter++;
-            }
         }
-        if(counter < K_input)
-        {
+        if(counter < K)
             cout << "YES" << endl;    
-        }
         else
-        {
             cout << "NO" << endl;   
-        }
         counter = 0;
     }
     return 0;
