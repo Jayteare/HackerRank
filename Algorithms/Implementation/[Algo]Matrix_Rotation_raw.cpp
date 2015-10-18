@@ -65,8 +65,8 @@ int main() {
     
     for(int i = 2; i >0; i--)
     {
-        temp2 = arr[i][3];
-        arr[i][3] = temp;
+        temp2 = arr[i][M-1];
+        arr[i][M-1] = temp;
         temp = temp2;
         
         if(i - 1 == 0)
@@ -80,6 +80,16 @@ int main() {
         }
     }
     
+    for(int i = 1; i < 2; i++)
+    {
+        temp  = arr[i][1];
+        arr[i][1] = arr[i][2];
+        temp2 = arr[i+1][1];
+        arr[i+1][1] = temp; 
+    }
+    
+    
+    cout << temp2 << endl;
     //PRINT
     for(int i = 0; i < M ; i++)
     {
