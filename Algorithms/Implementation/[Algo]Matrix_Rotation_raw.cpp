@@ -9,8 +9,11 @@ using namespace std;
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     int M,N,R,in_,temp,temp2;
+    int X = 0, Y = 0, inc = 1;
+    int N_counter = 0;
     cin >> M >> N >> R;
     
+    N_counter = N/2;
     int arr[M][N];
     for(int i = 0; i < M ; i++)
     {
@@ -21,105 +24,55 @@ int main() {
         }
     }
     
-    for(int index = 0; index < R; index++)
+    for(int index = 0; index < N_counter; index++)
     {
-        if( M > 2 && N > 2)
+        for(int jndex = 0; jndex < R; jndex++)
         {
-            //OUTER LOOP SWITCH PART_1 - START
-            for(int i = 0; i < M; i++)
+            
+            if( M > 2  && N > 2)
             {
-                if(i == 0)
-                temp = arr[i][0];
-                if(i+1 < M)
+                //LEFT
+                for(int i = X; i < (M-1)-X; i++)
                 {
-                    if(i == 0)
+                    if(i == X)
                     {
-                        arr[i][0]   = arr[i][1];
-                        temp2 = arr[i+1][0];
-                        arr[i+1][0] = temp;
-                        temp = temp2;
+                        temp2     = arr[i][i+1];
+                        temp      = arr[i][X]; 
+                        arr[i][X] = temp2;
                     }
-                    else
-                    {
-                        temp2 = arr[i+1][0];
-                        arr[i+1][0] = temp; 
-                        temp = temp2;
 
-                        /* 
-
-                        OUTER SUBJECTIVE ROTATION - START
-
-                        */
-                        //Bottom-Left-To-Right Rotation
-                        if(i+1 == M - 1)
-                        {
-                            for(int j = 0; j < N; j++)
-                            {
-                                if(j+1 < N)
-                                {
-                                    temp2 = arr[i+1][j+1];
-                                    arr[i+1][j+1] = temp;
-                                    temp = temp2;
-                                }
-                            }
-                        }//Bottom-Left-To-Right Rotation - END
-                    }
-                }
-            }//OUTER LOOP SWITCH PART_1 - END
-
-            for(int i = 2; i >0; i--)
-            {
-                temp2 = arr[i][M-1];
-                arr[i][M-1] = temp;
-                temp = temp2;
-
-                if(i - 1 == 0)
+                    temp2 = arr[i+1][X];
+                    arr[i+1][X] = temp;
+                    temp = temp2; 
+                }            
+                //BOTTOM
+                for(int j = 1+X; j < (N-1)-X; j++)
                 {
-                    for(int j = 3; j > 0; j--)
-                    {
-                        temp2 = arr[0][j];
-                        arr[0][j] = temp;
-                        temp = temp2;
-                    }
+                    temp2 = arr[M-inc][j];
+                    arr[M-inc][j] = temp;
+                    temp = temp2; 
+                }          
+                //RIGHT
+                for(int k = (M-1)-X; k > 0; k--)
+                {
+                    temp2 = arr[k][(N-1)-X];
+                    arr[k][(N-1)-X] = temp;
+                    temp = temp2;   
+                }           
+                //TOP
+                for(int h = (N-1) - X-X-X; h > 0; h--)
+                {
+                    temp2 = arr[X][h];
+                    arr[X][h-X] = temp;
+                    temp = temp2; 
                 }
+
             }
-
-            for(int i = 1; i < 2; i++)
-            {
-                temp  = arr[i][1];
-                arr[i][1] = arr[i][1];
-                temp2 = arr[i+1][1];
-                arr[i+1][1] = temp; 
-
-                temp = arr[i+1][i+1];
-                arr[i+1][i+1] = temp2;
-                temp2 = arr[i][i+1];
-
-                arr[i][i+1]= temp;
-                arr[i][i]  = temp2;
-
-            }   
+            temp2 = 0;
+            temp  = 0;    
         }
-        else
-        {
-            for(int i = 0; i < 1; i++)
-            {
-                temp  = arr[i][i];
-                arr[i][i] = arr[i][i];
-                temp2 = arr[i+1][i];
-                arr[i+1][i] = temp; 
-
-                temp = arr[i+1][i+1];
-                arr[i+1][i+1] = temp2;
-                temp2 = arr[i][i+1];
-
-                arr[i][i+1]= temp;
-                arr[i][i]  = temp2;
-            }   
-        }
-   
+        X++;inc++;
     }
-
     
     //PRINT
     for(int i = 0; i < M ; i++)
@@ -130,8 +83,6 @@ int main() {
         }
         cout << endl;
     }
-    
-
-    
+       
     return 0;
 }
