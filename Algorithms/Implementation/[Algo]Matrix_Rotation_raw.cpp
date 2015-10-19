@@ -25,82 +25,99 @@ int main() {
     {
         if( M > 2 && N > 2)
         {
-            
-        }
-        //OUTER LOOP SWITCH PART_1 - START
-        for(int i = 0; i < M; i++)
-        {
-            if(i == 0)
-            temp = arr[i][0];
-            if(i+1 < M)
+            //OUTER LOOP SWITCH PART_1 - START
+            for(int i = 0; i < M; i++)
             {
                 if(i == 0)
+                temp = arr[i][0];
+                if(i+1 < M)
                 {
-                    arr[i][0]   = arr[i][1];
-                    temp2 = arr[i+1][0];
-                    arr[i+1][0] = temp;
-                    temp = temp2;
-                }
-                else
-                {
-                    temp2 = arr[i+1][0];
-                    arr[i+1][0] = temp; 
-                    temp = temp2;
-
-                    /* 
-
-                    OUTER SUBJECTIVE ROTATION - START
-
-                    */
-                    //Bottom-Left-To-Right Rotation
-                    if(i+1 == M - 1)
+                    if(i == 0)
                     {
-                        for(int j = 0; j < N; j++)
+                        arr[i][0]   = arr[i][1];
+                        temp2 = arr[i+1][0];
+                        arr[i+1][0] = temp;
+                        temp = temp2;
+                    }
+                    else
+                    {
+                        temp2 = arr[i+1][0];
+                        arr[i+1][0] = temp; 
+                        temp = temp2;
+
+                        /* 
+
+                        OUTER SUBJECTIVE ROTATION - START
+
+                        */
+                        //Bottom-Left-To-Right Rotation
+                        if(i+1 == M - 1)
                         {
-                            if(j+1 < N)
+                            for(int j = 0; j < N; j++)
                             {
-                                temp2 = arr[i+1][j+1];
-                                arr[i+1][j+1] = temp;
-                                temp = temp2;
+                                if(j+1 < N)
+                                {
+                                    temp2 = arr[i+1][j+1];
+                                    arr[i+1][j+1] = temp;
+                                    temp = temp2;
+                                }
                             }
-                        }
-                    }//Bottom-Left-To-Right Rotation - END
+                        }//Bottom-Left-To-Right Rotation - END
+                    }
                 }
-            }
-        }//OUTER LOOP SWITCH PART_1 - END
+            }//OUTER LOOP SWITCH PART_1 - END
 
-        for(int i = 2; i >0; i--)
-        {
-            temp2 = arr[i][M-1];
-            arr[i][M-1] = temp;
-            temp = temp2;
-
-            if(i - 1 == 0)
+            for(int i = 2; i >0; i--)
             {
-                for(int j = 3; j > 0; j--)
+                temp2 = arr[i][M-1];
+                arr[i][M-1] = temp;
+                temp = temp2;
+
+                if(i - 1 == 0)
                 {
-                    temp2 = arr[0][j];
-                    arr[0][j] = temp;
-                    temp = temp2;
+                    for(int j = 3; j > 0; j--)
+                    {
+                        temp2 = arr[0][j];
+                        arr[0][j] = temp;
+                        temp = temp2;
+                    }
                 }
             }
+
+            for(int i = 1; i < 2; i++)
+            {
+                temp  = arr[i][1];
+                arr[i][1] = arr[i][1];
+                temp2 = arr[i+1][1];
+                arr[i+1][1] = temp; 
+
+                temp = arr[i+1][i+1];
+                arr[i+1][i+1] = temp2;
+                temp2 = arr[i][i+1];
+
+                arr[i][i+1]= temp;
+                arr[i][i]  = temp2;
+
+            }   
         }
-
-        for(int i = 1; i < 2; i++)
+        else
         {
-            temp  = arr[i][1];
-            arr[i][1] = arr[i][1];
-            temp2 = arr[i+1][1];
-            arr[i+1][1] = temp; 
+            for(int i = 0; i < 1; i++)
+            {
+                temp  = arr[i][i];
+                arr[i][i] = arr[i][i];
+                temp2 = arr[i+1][i];
+                arr[i+1][i] = temp; 
 
-            temp = arr[i+1][i+1];
-            arr[i+1][i+1] = temp2;
-            temp2 = arr[i][i+1];
+                temp = arr[i+1][i+1];
+                arr[i+1][i+1] = temp2;
+                temp2 = arr[i][i+1];
 
-            arr[i][i+1]= temp;
-            arr[i][i]  = temp2;
-
-        }   
+                arr[i][i+1]= temp;
+                arr[i][i]  = temp2;
+            }   
+        }
+   
     }
 
     
