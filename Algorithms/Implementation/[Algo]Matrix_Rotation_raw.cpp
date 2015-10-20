@@ -8,30 +8,40 @@ using namespace std;
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-    int M,N,R,in_,temp,temp2;
-    int X = 0, inc = 1;
-    int N_counter = 0;
+    unsigned M,N,R,in_,temp,temp2;
+    unsigned X = 0, inc = 1;
+    unsigned N_counter = 0, Mn = 0;
     cin >> M >> N >> R;
     
-    N_counter = N/2;
-    int arr[M][N];
-    for(int i = 0; i < M ; i++)
+    //Even Matrix
+    if(M >= N)
     {
-        for(int j = 0; j < N; j++)
+        Mn = N/2;
+    }
+    else
+    {
+        Mn = M/2;
+    }
+    
+    N_counter = Mn;
+    unsigned arr[M][N];
+    for(unsigned i = 0; i < M ; i++)
+    {
+        for(unsigned j = 0; j < N; j++)
         {
             cin >> in_;
             arr[i][j] = in_;
         }
     }
     
-    for(int index = 0; index < N_counter; index++)
+    for(unsigned index = 0; index < N_counter; index++)
     {
-        for(int jndex = 0; jndex < R; jndex++)
+        for(unsigned jndex = 0; jndex < R; jndex++)
         {            
             if( M > 2  && N > 2)
             {
                 //LEFT
-                for(int i = X; i < (M-1)-X; i++)
+                for(unsigned i = X; i < (M-1)-X; i++)
                 {
                     if(i == X)
                     {
@@ -47,7 +57,7 @@ int main() {
                 
                 
                 //BOTTOM
-                for(int j = 1+X; j < (N-1)-X; j++)
+                for(unsigned j = 1+X; j < (N-1)-X; j++)
                 {
                     temp2 = arr[M-inc][j];
                     arr[M-inc][j] = temp;
@@ -56,7 +66,7 @@ int main() {
                 
                 
                 //RIGHT
-                for(int k = (M-1)-X; k > X; k--)
+                for(unsigned k = (M-1)-X; k > X; k--)
                 {
                     temp2 = arr[k][(N-1)-X];
                     arr[k][(N-1)-X] = temp;
@@ -64,7 +74,7 @@ int main() {
                 }  
                
                 //TOP
-                for(int h = (N-1)-X; h > X; h--)
+                for(unsigned h = (N-1)-X; h > X; h--)
                 {
                     temp2 = arr[X][h];
                     arr[X][h] = temp;
@@ -81,9 +91,9 @@ int main() {
     }
     
     //PRINT
-    for(int i = 0; i < M ; i++)
+    for(unsigned i = 0; i < M ; i++)
     {
-        for(int j = 0; j < N; j++)
+        for(unsigned j = 0; j < N; j++)
         {
             cout << arr[i][j] << " ";
         }
