@@ -13,7 +13,7 @@ int main() {
     int N_counter = 0;
     cin >> M >> N >> R;
     
-    N_counter = 2;
+    N_counter = M/2;
     int arr[M][N];
     for(int i = 0; i < M ; i++)
     {
@@ -54,27 +54,25 @@ int main() {
                     temp = temp2; 
                 }
                 
+                
                 //RIGHT
                 for(int k = (M-1)-X; k > X; k--)
                 {
-                    temp2 = arr[k][(M-1)-X];
+                    temp2 = arr[k][(N-1)-X];
                     arr[k][(N-1)-X] = temp;
                     temp = temp2;   
-                }    
+                }  
+               
+               
                 
-                cout << temp << endl;
-                
-                /*
                 //TOP
                 for(int h = (N-1)-X; h > X; h--)
                 {
-                    temp2 = arr[()][h];
-                    arr[(M-1)][h] = temp;
+                    temp2 = arr[X][h];
+                    arr[X][h] = temp;
                     temp = temp2; 
-                }      
-                */
+                }                 
                 
-               
             }
             
             temp2 = 0;
