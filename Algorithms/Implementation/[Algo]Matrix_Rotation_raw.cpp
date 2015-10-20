@@ -13,7 +13,7 @@ int main() {
     int N_counter = 0;
     cin >> M >> N >> R;
     
-    N_counter = M/2;
+    N_counter = 4;
     int arr[M][N];
     for(int i = 0; i < M ; i++)
     {
