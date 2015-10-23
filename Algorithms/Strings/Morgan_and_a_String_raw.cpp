@@ -1,43 +1,60 @@
 #include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream>     // std::cout, std::boolalpha
-#include <algorithm>    // std::lexicographical_compare
-#include <cctype>       // std::tolower
+#include <iostream>     
+#include <algorithm>       
 #include <string>
 using namespace std;
 
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
-    int T,S_L;
+    int T,S_L = 0,len_ = 0;
+    int c1push = 0, c2push = 0;
     cin >> T;
     string S,S1,S2;
-    string min,max,mainM;
-    for(int i = 0; i < T; i++)
+    vector<string> myV;
+    string C1,C2,mainM="";
+    for(int j = 0; j < T; j++)
     {
         cin >> S1 >> S2;
-        S = S1 + S2;
-        
-        if(lexicographical_compare(S1.begin(),S1.end(),S2.begin(),S2.end()) < 1)
+        for(int i = 0; i <S1.length();i++)
         {
-            max = S2.substr(0,1) + S1 + S2.substr(1,S2.length());
-            for(int i = 0; i <S2.length()-1; i++)
+            C1 = S1[i]; 
+            for(int k = S_L; k <S2.length(); k++)
             {
-                min = S2.substr(0,i+1) + S1 + S2.substr(i+1,S2.length());
-                max = S2.substr(0,i+2) + S1 + S2.substr(i+2,S2.length());
-                if(lexicographical_compare(min.begin(),min.end(),max.begin(),max.end()) >= 1)
+                C2 = S2[k];
+                if(C1 < C2)
                 {
-                    mainM = min;
-                    cout << mainM << endl;
+                    myV.push_back(C1);
+                    c1push++;
+                    break;
                 }
+                else
+                {
+                    S_L++;
+                    myV.push_back(C2);
+                    c2push++;
+                }       
             }
         }
-        else
+        len_ = S_L;
+        S_L  = 0;
+        
+        if(myV.size() <= (S1.length() + S2.length()))
         {
-
+            myV.push_back(S2.substr(len_,S2.length()));
+            //myV.push_back(S2.substr(len_,S2.length()));
         }
-        cout << mainM << endl;
+        
+        for(int h = 0; h < myV.size();h++)
+        {
+            cout << myV[h];    
+        }
+        
+        cout << endl;
+        myV.clear();
+        len_ = 0;
     }
     
     return 0;
