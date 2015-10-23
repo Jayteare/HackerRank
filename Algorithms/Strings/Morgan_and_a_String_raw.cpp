@@ -25,7 +25,7 @@ int main() {
             for(int i = 0; i <S2.length()-1; i++)
             {
                 min = S2.substr(0,i+1) + S1 + S2.substr(i+1,S2.length());
-                max = S2.substr(0,i+2) + S1 + S2.substr(i+3,S2.length());
+                max = S2.substr(0,i+2) + S1 + S2.substr(i+2,S2.length());
                 if(lexicographical_compare(min.begin(),min.end(),max.begin(),max.end()) >= 1)
                 {
                     mainM = min;
