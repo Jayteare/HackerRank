@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-//0.08seconds in TestCase #9
+//0.08seconds in TestCase #9 ranked as first seed.
 unsigned M,N,R,in_,temp,temp2;
 unsigned X = 0, inc = 1;
 unsigned N_counter = 0, Mn = 0,outer_R = 0, L_R = 0;
