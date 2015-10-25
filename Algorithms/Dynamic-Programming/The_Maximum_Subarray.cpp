@@ -5,6 +5,8 @@
 #include <algorithm>
 using namespace std;
 
+//0.2seconds in Testcase #2 ranked as first seed;
+
 // * Add all the positive elements (CHECK);
 // * Find the contunious sub-array (CHECK);
 // * Find the highest negative number in the given array (CHECK);
