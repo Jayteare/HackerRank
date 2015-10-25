@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-/* Head ends here */
+// 0.0seconds in Testcase #9
 
 // * Check to see if all the letters in a string are the same (CHECK);
 // * Count the number of 'a'"s in the string(CHECK);
