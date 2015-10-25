@@ -1,9 +1,3 @@
-#include <cmath>
-#include <ctime>
-#include <cstdio>
-#include <cstdlib>
-#include <numeric>
-#include <sstream>
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -11,7 +5,11 @@ using namespace std;
 
 
 // * Check to see if all the letters in a string are the same (CHECK);
-// * Count the number of 'a'"s in the string (CHECK);
+// * Count the number of 'a'"s in the string(CHECK);
+// * Count the number of 'b'"s in the string(CHECK);
+// * Count the number of 'c'"s in the string(CHECK);
+// * Find if a string is even or odd(CHECK);
+// * Find the return value of the string(CHECK);
 bool check_same(string s)
 {
     for(int i = 0; i<s.length(); i++)
@@ -22,6 +20,7 @@ bool check_same(string s)
     return true;
 }
 //------------------------------------------
+/* Count the letter of a&b&c; */
 int count_A(string s)
 {
     int a = 0;
@@ -73,9 +72,9 @@ int main() {
             int b_num = count_B(s);
             int c_num = count_C(s);
             
-            bool check_a = ((a_num % 2) == 1); //if zero even;true;
-            bool check_b = ((b_num % 2) == 1); //if zero even;true;
-            bool check_c = ((c_num % 2) == 1); //if zero even;true;
+            bool check_a = ((a_num % 2) == 1); //if zero odd;true;
+            bool check_b = ((b_num % 2) == 1); //if zero odd;true;
+            bool check_c = ((c_num % 2) == 1); //if zero odd;true;
             bool odd_    = ((check_a) && (check_b) && (check_c));
             
                  check_a = ((a_num % 2) == 0); //if zero even;true;
