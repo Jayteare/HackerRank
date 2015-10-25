@@ -70,7 +70,7 @@ int main() {
             cout << "YES" << endl;
         else
         {
-            		if (!edge_)
+                if (!edge_)
 		{
 			if ((std::adjacent_find(ycheck.begin(), ycheck.end(), not_equal_to<int>()) == ycheck.end()))
 				cout << "YES" << endl;
@@ -80,8 +80,6 @@ int main() {
 		else
 			cout << "NO" << endl;
         }
-
-
 		count = 0;
 		ycheck.clear();
 		xcheck.clear();
