@@ -3,7 +3,6 @@
 using namespace std;
 /* Head ends here */
 
-
 // * Check to see if all the letters in a string are the same (CHECK);
 // * Count the number of 'a'"s in the string(CHECK);
 // * Count the number of 'b'"s in the string(CHECK);
