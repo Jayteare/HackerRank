@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-//0.2seconds in Testcase #2 ranked as first seed;
+//0.2seconds in Testcase #2;
 
 // * Add all the positive elements (CHECK);
 // * Find the contunious sub-array (CHECK);
