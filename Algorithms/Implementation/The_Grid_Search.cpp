@@ -2,12 +2,12 @@
 #include <cstdio>
 #include <vector>
 #include <iostream>
-#include <functional>   // std::not_equal_to
+#include <functional>
 #include <algorithm>
 #include <string>
 using namespace std;
 
-
+//1.23seconds in Testcase #5
 int main() {
 	/* Enter your code here. Read input from STDIN. Print output to STDOUT */
 	unsigned T, X, Y, K, dump, count = 0;
