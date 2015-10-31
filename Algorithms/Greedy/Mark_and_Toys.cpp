@@ -5,12 +5,11 @@
 #include <algorithm>
 #include <string>
 #include <iomanip>
-
 using namespace std;
 #define REP(i,a,b) \
     for(int i = int(a); i < int(b); i++)
 
-
+//0.04seconds in Testcase #15
 int main() 
 {
     long long n, k; cin >> n >> k;
