@@ -1,2 +1,2 @@
 # Hackerrank
-C++ / Java Solutions to Data Structures problems. 
+C++ / Java / Python / Bash Solutions to Hackerrank.
